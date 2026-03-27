@@ -1,26 +1,209 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f3ee;
+  --foreground: #6f5a4d;
+  --primary: #ccb09a;
+  --primary-dark: #b38f74;
+  --accent: #efe3d7;
+  --soft-brown: #7e6657;
+  --border: #e7d9cd;
+  --white: #ffffff;
+  --card-shadow: 0 10px 30px rgba(126, 102, 87, 0.08);
+  --card-shadow-lg: 0 18px 45px rgba(126, 102, 87, 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(to bottom, #fcf8f4 0%, #f8f3ee 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--soft-brown);
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+p,
+a,
+button,
+input,
+textarea,
+label,
+li,
+span,
+select {
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.container-width {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container-width {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-width {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: white;
+  padding: 1.1rem 2rem;
+  font-size: 0.95rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(179, 143, 116, 0.18);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(126, 102, 87, 0.18);
+  color: var(--soft-brown);
+  padding: 1.1rem 2rem;
+  font-size: 0.95rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.8);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: white;
+  border-color: rgba(126, 102, 87, 0.28);
+  transform: translateY(-1px);
+}
+
+.soft-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(231, 217, 205, 0.7);
+  box-shadow: var(--card-shadow);
+}
+
+.soft-card-lg {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(231, 217, 205, 0.7);
+  box-shadow: var(--card-shadow-lg);
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(231, 217, 205, 0.95);
+  padding: 1rem 1rem;
+  color: var(--foreground);
+  background: white;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: #9f8d80;
+}
+
+.input-field:focus {
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 4px rgba(204, 176, 154, 0.18);
+}
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease both;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 0.36s;
+}
+
+.fade-in-delay-4 {
+  animation-delay: 0.48s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
