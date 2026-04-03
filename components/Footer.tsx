@@ -4,7 +4,8 @@ import { siteConfig } from "@/lib/site";
 export default function Footer() {
   return (
     <footer className="border-t border-[rgba(126,102,87,0.08)] bg-[rgba(255,255,255,0.95)]">
-      <div className="container-width py-16">
+      {/* 🔽 Reduced top padding from py-16 → pt-10 pb-14 */}
+      <div className="container-width pt-10 pb-14">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
             <h3 className="text-4xl">Little Hands Mobile Soft Play</h3>
@@ -43,8 +44,24 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-[rgba(126,102,87,0.08)] pt-6 text-sm text-[var(--foreground)]">
-          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="mt-10 border-t border-[rgba(126,102,87,0.08)] pt-6 text-sm text-[var(--foreground)] flex flex-col items-center gap-2 md:flex-row md:justify-between">
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          </p>
+
+          {/* 👇 Your credit */}
+          <p className="opacity-70">
+            Website by{" "}
+            <a
+              href="https://natalia-santiago-portfolio.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:opacity-100"
+            >
+              Natalia Santiago
+            </a>
+          </p>
         </div>
       </div>
     </footer>
