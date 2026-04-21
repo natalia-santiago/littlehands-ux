@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
+import { serviceAreas } from "@/lib/service-areas";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -21,10 +22,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Luxury Soft Play for Little Ones`,
+    default: `${siteConfig.name} | Soft Play Rentals for Babies and Toddlers in Goldsboro, NC`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description:
+    "Luxury soft play rentals for babies and toddlers in Goldsboro, North Carolina. Beautiful soft play setups for birthdays, baby showers, playdates, and special events.",
   keywords: siteConfig.keywords,
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name }],
@@ -39,8 +41,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: `${siteConfig.name} | Luxury Soft Play for Little Ones`,
-    description: siteConfig.description,
+    title: `${siteConfig.name} | Soft Play Rentals for Babies and Toddlers in Goldsboro, NC`,
+    description:
+      "Luxury soft play rentals for babies and toddlers in Goldsboro, North Carolina. Beautiful soft play setups for birthdays, baby showers, playdates, and special events.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "en_US",
@@ -50,19 +53,27 @@ export const metadata: Metadata = {
         url: "/images/hero.jpg",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} setup`,
+        alt: `Luxury soft play rental setup by ${siteConfig.name} in Goldsboro, North Carolina for babies and toddlers`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Luxury Soft Play for Little Ones`,
-    description: siteConfig.description,
+    title: `${siteConfig.name} | Soft Play Rentals for Babies and Toddlers in Goldsboro, NC`,
+    description:
+      "Luxury soft play rentals for babies and toddlers in Goldsboro, North Carolina. Beautiful soft play setups for birthdays, baby showers, playdates, and special events.",
     images: ["/images/hero.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -71,27 +82,110 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const serviceAreaNames = serviceAreas.map((area) =>
+    area.name.replace(", NC", ""),
+  );
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteConfig.url}#organization`,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/apple-touch-icon.png`,
+    sameAs: [siteConfig.instagram],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phone,
+        contactType: "customer service",
+        areaServed: "US",
+        availableLanguage: "English",
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `${siteConfig.url}#localbusiness`,
     name: siteConfig.name,
     image: `${siteConfig.url}/images/hero.jpg`,
     url: siteConfig.url,
     telephone: siteConfig.phone,
-    areaServed: siteConfig.serviceArea,
+    description:
+      "Luxury soft play rentals for babies and toddlers in Goldsboro, North Carolina. Beautiful soft play setups for birthdays, baby showers, playdates, and special events.",
+    priceRange: "$225-$350",
+    parentOrganization: {
+      "@id": `${siteConfig.url}#organization`,
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Goldsboro",
       addressRegion: "NC",
       addressCountry: "US",
     },
+    areaServed: serviceAreaNames.map((name) => ({
+      "@type": "City",
+      name,
+    })),
     sameAs: [siteConfig.instagram],
-    description: siteConfig.description,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phone,
+        contactType: "customer service",
+        availableLanguage: "English",
+      },
+    ],
+    knowsAbout: [
+      "Soft play rentals",
+      "Baby party rentals",
+      "Toddler party rentals",
+      "Birthday soft play rentals",
+      "Baby shower soft play rentals",
+      "Mobile soft play setups",
+      "Luxury soft play rentals in Goldsboro, NC",
+    ],
     serviceType: [
       "Mobile soft play rentals",
-      "Birthday party soft play rentals",
-      "Baby shower soft play rentals",
-      "Toddler event rentals",
+      "Soft play rentals for birthdays",
+      "Soft play rentals for baby showers",
+      "Soft play rentals for playdates",
+      "Toddler party rentals",
+      "Luxury soft play event rentals",
+    ],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}#website`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description:
+      "Luxury soft play rentals for babies and toddlers in Goldsboro, North Carolina. Beautiful soft play setups for birthdays, baby showers, playdates, and special events.",
+    publisher: {
+      "@id": `${siteConfig.url}#organization`,
+    },
+    inLanguage: "en-US",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteConfig.url}/service-areas/{search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
     ],
   };
 
@@ -100,7 +194,14 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${montserrat.variable}`}
     >
-      <body>
+      <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <Script
           id="local-business-schema"
           type="application/ld+json"
@@ -108,8 +209,22 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>
