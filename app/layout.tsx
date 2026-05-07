@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero.jpg",
+        url: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183450/hero_z7izmm.jpg",
         width: 1200,
         height: 630,
         alt: `Luxury soft play rental setup by ${siteConfig.name} in Goldsboro, North Carolina for babies and toddlers`,
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | Soft Play Rentals for Babies and Toddlers in Goldsboro, NC`,
     description:
       "Luxury soft play rentals for babies and toddlers in Goldsboro, North Carolina. Beautiful soft play setups for birthdays, baby showers, playdates, and special events.",
-    images: ["/images/hero.jpg"],
+    images: ["https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183450/hero_z7izmm.jpg"],
   },
   robots: {
     index: true,
@@ -110,7 +110,7 @@ export default function RootLayout({
     "@type": "LocalBusiness",
     "@id": `${siteConfig.url}#localbusiness`,
     name: siteConfig.name,
-    image: `${siteConfig.url}/images/hero.jpg`,
+    image: `${siteConfig.url}https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183450/hero_z7izmm.jpg`,
     url: siteConfig.url,
     telephone: siteConfig.phone,
     description:

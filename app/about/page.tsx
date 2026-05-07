@@ -72,7 +72,7 @@ export default function AboutPage() {
 
           <div className="soft-card-lg overflow-hidden rounded-[2.25rem] p-4">
             <Image
-              src="/images/setup-1.jpg"
+              src="https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-1_ykdxd9.jpg"
               alt="Luxury soft play rental setup for babies and toddlers in Goldsboro, North Carolina"
               width={900}
               height={1100}

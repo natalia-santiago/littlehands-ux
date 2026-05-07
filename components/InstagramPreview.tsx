@@ -3,15 +3,15 @@ import { siteConfig } from "@/lib/site";
 
 const images = [
   {
-    src: "/images/setup-1.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-1_ykdxd9.jpg",
     alt: "Soft play rental setup inspiration for a birthday or special event",
   },
   {
-    src: "/images/setup-2.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-2_gzctgr.jpg",
     alt: "Luxury soft play setup for babies and toddlers by Little Hands Mobile Soft Play",
   },
   {
-    src: "/images/setup-3.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183452/setup-3_dsaudr.jpg",
     alt: "Elegant soft play event setup with beautiful styling for little ones",
   },
 ];

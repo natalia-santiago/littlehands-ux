@@ -42,7 +42,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/images/setup-2.jpg",
+          url: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-2_gzctgr.jpg",
           width: 1200,
           height: 630,
           alt: `Soft play rental setup with ball pit and slide for toddlers in ${area.name}`,
@@ -53,7 +53,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `Soft Play Rentals in ${area.name} | Little Hands Mobile Soft Play`,
       description: `Explore luxury soft play rentals in ${area.name} for babies and toddlers. Beautiful setups for birthdays, baby showers, playdates, and special events.`,
-      images: ["/images/setup-2.jpg"],
+      images: ["https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-2_gzctgr.jpg"],
     },
   };
 }
@@ -235,7 +235,7 @@ export default async function ServiceAreaDetailPage({
         <div className="mx-auto mt-12 max-w-6xl">
           <div className="soft-card-lg overflow-hidden rounded-[2.25rem] p-4">
             <Image
-              src="/images/setup-2.jpg"
+              src="https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-2_gzctgr.jpg"
               alt={`Soft play rental setup with ball pit and slide for toddlers in ${area.name}`}
               width={1400}
               height={900}

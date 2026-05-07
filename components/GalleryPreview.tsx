@@ -4,15 +4,15 @@ import SectionTitle from "./SectionTitle";
 
 const galleryImages = [
   {
-    src: "/images/setup-1.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-1_ykdxd9.jpg",
     alt: "Elegant soft play rental setup for a children's event by Little Hands Mobile Soft Play",
   },
   {
-    src: "/images/setup-2.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-2_gzctgr.jpg",
     alt: "Luxury soft play setup for babies and toddlers at a celebration in Goldsboro, North Carolina",
   },
   {
-    src: "/images/setup-3.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183452/setup-3_dsaudr.jpg",
     alt: "Beautiful soft play rental with ball pit and play elements for a birthday or baby shower",
   },
 ];

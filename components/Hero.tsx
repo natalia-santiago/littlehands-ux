@@ -87,7 +87,7 @@ export default function Hero() {
 
           <div className="soft-card-lg relative overflow-hidden rounded-[2.5rem] p-4">
             <Image
-              src="/images/hero.jpg"
+              src="https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183450/hero_z7izmm.jpg"
               alt="Luxury soft play rental setup for babies and toddlers in Goldsboro, North Carolina"
               width={900}
               height={1100}

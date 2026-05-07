@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero.jpg",
+        url: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183450/hero_z7izmm.jpg",
         width: 1200,
         height: 630,
         alt: "Luxury soft play rental setup in Goldsboro, North Carolina for babies and toddlers",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "Soft Play Rentals for Babies and Toddlers in Goldsboro, NC | Little Hands Mobile Soft Play",
     description:
       "Luxury soft play rentals for babies and toddlers in Goldsboro, North Carolina. Explore beautiful setups for birthdays, baby showers, playdates, and special events.",
-    images: ["/images/hero.jpg"],
+    images: ["https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183450/hero_z7izmm.jpg"],
   },
 };
 
@@ -117,7 +117,7 @@ export default function HomePage() {
 
           <div className="soft-card-lg fade-in-up fade-in-delay-2 overflow-hidden rounded-[2.25rem] p-4">
             <Image
-              src="/images/setup-2.jpg"
+              src="https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-2_gzctgr.jpg"
               alt="Luxury soft play rental setup in Goldsboro, North Carolina for babies and toddlers"
               width={900}
               height={1100}

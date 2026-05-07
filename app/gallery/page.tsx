@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 
 const images = [
   {
-    src: "/images/setup-1.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-1_ykdxd9.jpg",
     alt: "Soft play ball pit and slide setup for toddlers at a birthday party in Goldsboro NC",
   },
   {
-    src: "/images/setup-2.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183451/setup-2_gzctgr.jpg",
     alt: "Luxury soft play rental setup for baby shower in Goldsboro North Carolina",
   },
   {
-    src: "/images/setup-3.jpg",
+    src: "https://res.cloudinary.com/dwvmjpgxh/image/upload/q_auto/f_auto/v1778183452/setup-3_dsaudr.jpg",
     alt: "Elegant soft play setup with ball pit and decorations for toddler event in Goldsboro NC",
   },
 ];
